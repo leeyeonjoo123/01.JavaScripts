@@ -183,4 +183,3 @@ console.log(rectangle instanceof Object); //true. Object는 최상위 클래스!
 // javascript에 포함된 object를 category로 살펴 볼 수 있다.
 
 
-
