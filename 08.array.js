@@ -73,7 +73,33 @@ console.log(fruits); // (6) ['바나나', '망고', '딸기', '레몬', '딸기2
 fruits.splice(2,2); //시작index, 시작index로부터 몇개, 원하는 갯수 안적으면 index부터 모든 데이터를 다 지움
 console.log(fruits); // (4) ['바나나', '망고', '딸기2', '배']
 
-// '바나나', '망고' ->  '딸기2', '배' 이렇게 지우고 그 자리에 새로운 데이터 넣기
-fruits.splice(0,2, '딸기2', '배');
-console.log(fruits); // (4) ['딸기2', '배', '딸기2', '배']
+// '바나나', '망고' ->  '딸기100', '배100' 이렇게 지우고 그 자리에 새로운 데이터 넣기
+fruits.splice(0,2, '딸기100', '배100');
+console.log(fruits); // (4) ['딸기100', '배100', '딸기2', '배']
 
+// 배열 두개를 합쳐보자 -> concat
+// 새로운 배열 선언
+const person = ['학생', '직장인'];
+const fruitsPerson = fruits.concat(person); //fruits 배열 + person 배열
+console.log(fruitsPerson); //(6) ['딸기100', '배100', '딸기2', '배', '학생', '직장인']
+
+
+// 5. Searching
+//find the index : 배열안에 어떤값이 몇번쨰인덱스에 있는지 알고싶을때
+
+console.clear();
+console.log(fruits); //(4) ['딸기100', '배100', '딸기2', '배']
+//indexOf 로 해당데이터가 몇번째 index에 있는지 숫자 출력
+console.log(fruits.indexOf('배')); //3 
+console.log(fruits.indexOf('배200')); // -1 : 없는 값에 대해서 index를 알려달라고하면 -1 출력
+
+//includes로 배열안에 해당하는 값이 있는지 없는지 true/false 출력
+console.log(fruits.includes('배100'));  //true
+console.log(fruits.includes('배200'));  //false
+
+//lastIndexOf : 증복되는 값이 있을 경우 마지막에 있는 데이터ㅣ의 index 값 출력
+console.clear();
+fruits.push('배100');
+console.log(fruits);
+console.log(fruits.indexOf('배100')); //1
+console.log(fruits.lastIndexOf('배100')); //4
